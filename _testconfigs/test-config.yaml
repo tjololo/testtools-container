@@ -1,0 +1,18 @@
+connectTests:
+  google:
+    hostname: google.com
+    port: 443
+    timeout: 30s
+    interval: 5s
+  github:
+    hostname: github.com
+    port: 443
+    timeout: 30s
+    interval: 5s
+dnsTests:
+  google:
+    hostname: google.com
+    interval: 1s
+  github:
+    hostname: github.com
+    interval: 1s
