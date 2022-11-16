@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: ko.local/docker-525809ff7265197fc6eb07e57f70548a
+  repository: ghcr.io/tjololo/testtools-container
   pullPolicy: IfNotPresent
-  tag: "test"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
