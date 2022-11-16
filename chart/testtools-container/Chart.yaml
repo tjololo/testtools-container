@@ -1,0 +1,14 @@
+apiVersion: v2
+name: testtools-container
+description: Deploy testtools-container with prometheus and grafana
+
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
+
+
+dependencies:
+  - name: kube-prometheus-stack
+    version: "41.7.*"
+    repository: https://prometheus-community.github.io/helm-charts
+    condition: kubePromStack.enabled

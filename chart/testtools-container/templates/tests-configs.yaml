@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "testtools-container.fullname" . }}-test-configs
+  labels:
+    {{- include "testtools-container.labels" . | nindent 4 }}
+data:
+  test-config.yaml: |
+    {{- toYaml .Values.tests | nindent 4 }}

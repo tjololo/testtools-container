@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "testtools-container.fullname" . }}
+  labels:
+    release: testtools
+    {{- include "testtools-container.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "testtools-container.selectorLabels" . | nindent 6 }}
+  jobLabel: testtools-container
+  namespaceSelector:
+    matchNames:
+      - default
+  endpoints:
+    - port: http
+      path: "/metrics"
+      scheme: http
+      scrapeTimeout: 30s
+      honorLabels: true
